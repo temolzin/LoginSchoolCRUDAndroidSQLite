@@ -9,8 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PanelAdmin extends AppCompatActivity {
-    TextView textViewNombreCompleto;
-    TextView textViewTipoUsuario;
+    public TextView textViewNombreCompleto;
+    public TextView textViewTipoUsuario;
     Button buttonSalir;
 
 
@@ -19,6 +19,14 @@ public class PanelAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paneladmin);
         this.asociarCampos();
+
+        Bundle parametros = this.getIntent().getExtras();
+        if(parametros !=null){
+            String nombrecompleto = parametros.getString("nombrecompleto");
+            textViewNombreCompleto.setText(nombrecompleto);
+            String nombretipousuario = parametros.getString("nombretipousuario");
+            textViewTipoUsuario.setText(nombretipousuario);
+        }
 
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override

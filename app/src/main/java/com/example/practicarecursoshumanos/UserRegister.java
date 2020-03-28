@@ -78,7 +78,7 @@ public class UserRegister extends AppCompatActivity {
         buttonRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("https://172.16.106.60/webserviceandroid/functions/process/webserviceusuario.php");
+                ejecutarServicio("https://192.168.0.7/webservicephpandroid/functions/process/webserviceusuario.php");
             }
         });
     }
@@ -138,7 +138,7 @@ public class UserRegister extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "OPERACIÓN EXITOSA" + response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "OPERACIÓN EXITOSA", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
