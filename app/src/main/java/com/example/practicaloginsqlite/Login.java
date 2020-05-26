@@ -1,4 +1,4 @@
-package com.example.practicarecursoshumanos;
+package com.example.practicaloginsqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.practicarecursoshumanos;
+package com.example.practicaloginsqlite;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -68,13 +68,6 @@ public class UserRegister extends AppCompatActivity {
         adaptador = new ArrayAdapter<TipoUsuario>(getApplicationContext(),android.R.layout.simple_spinner_item,llenarListaTipoUsuarios());
         spinnerTipoUsuario.setAdapter(adaptador);
 
-        buttonImagenAleatoria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cambiarImagen();
-            }
-        });
-
         buttonRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +107,6 @@ public class UserRegister extends AppCompatActivity {
     }
 
     private void asociarCampos() {
-        this.buttonImagenAleatoria = findViewById(R.id.buttonimagenAleatoria);
         this.editTextUsername = findViewById(R.id.editTextUserName);
         this.editTextPassword = findViewById(R.id.editTextPassword);
         this.editTextNombre = findViewById(R.id.editTextNombre);
@@ -123,15 +115,6 @@ public class UserRegister extends AppCompatActivity {
         this.spinnerTipoUsuario = findViewById(R.id.spinnerTipoUsuario);
         this.buttonRegistrar = findViewById(R.id.buttonRegister);
         this.radioButtonRegistrarse = findViewById(R.id.radioButtonLoginRegister);
-    }
-
-    private void cambiarImagen() {
-        ImageView imageView = findViewById(R.id.imageViewAleatorio);
-
-        Random random = new Random();
-        int posicion = random.nextInt(5);
-
-        imageView.setImageResource(imagenAleatorio[posicion]);
     }
 
     private void ejecutarServicio(String url) {

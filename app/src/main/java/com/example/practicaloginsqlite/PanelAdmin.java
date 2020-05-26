@@ -1,4 +1,4 @@
-package com.example.practicarecursoshumanos;
+package com.example.practicaloginsqlite;
 
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +16,7 @@ public class PanelAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);                                                                 
         setContentView(R.layout.activity_paneladmin);
         this.asociarCampos();
 
