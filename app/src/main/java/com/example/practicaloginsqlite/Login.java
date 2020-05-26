@@ -78,7 +78,7 @@ public class Login extends AppCompatActivity {
         this.editTextUsername = findViewById(R.id.editTextUserName);
         this.editTextPassword = findViewById(R.id.editTextPassword);
         this.buttonLogin = findViewById(R.id.buttonLogin);
-        this.radioButtonRegistrarse = findViewById(R.id.radioButtonLoginRegister);
+        this.radioButtonRegistrarse = findViewById(R.id.radioButtonLoginRegisterUser);
         this.spinnerLoginTipoUsuario = findViewById(R.id.spinnerLoginTipoUsuario);
     }
 

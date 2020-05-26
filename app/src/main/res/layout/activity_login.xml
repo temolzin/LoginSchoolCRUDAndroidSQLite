@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Inicia Sesión"
-            android:textColor="#2196F3"
+            android:textColor="#D64B4B"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -28,8 +28,8 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="154dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_height="149dp"
+            app:srcCompat="@drawable/logostart" />
 
         <Space
             android:layout_width="match_parent"
@@ -51,22 +51,30 @@
             android:hint="Contraseña"
             android:inputType="textPassword" />
 
-        <Spinner
-            android:id="@+id/spinnerLoginTipoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="51dp" />
-
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="62dp"
+            android:background="#D64B4B"
             android:text="Aceptar" />
 
         <RadioButton
-            android:id="@+id/radioButtonLoginRegister"
+            android:id="@+id/radioButtonLoginRegisterUser"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrarse" />
+            android:layout_height="55dp"
+            android:text="Registra Usuario" />
+
+        <RadioButton
+            android:id="@+id/radioButtonLoginRegisterRol"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Registra Rol de Usuario" />
+
+        <RadioButton
+            android:id="@+id/radioButtonLoginAccess"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Registra Acceso" />
     </LinearLayout>
 
 </RelativeLayout>

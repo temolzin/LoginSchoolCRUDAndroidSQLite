@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -19,7 +18,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -33,7 +31,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -114,7 +111,7 @@ public class UserRegister extends AppCompatActivity {
         this.editTextApMat = findViewById(R.id.editTextApMat);
         this.spinnerTipoUsuario = findViewById(R.id.spinnerTipoUsuario);
         this.buttonRegistrar = findViewById(R.id.buttonRegister);
-        this.radioButtonRegistrarse = findViewById(R.id.radioButtonLoginRegister);
+        this.radioButtonRegistrarse = findViewById(R.id.radioButtonLoginRegisterUser);
     }
 
     private void ejecutarServicio(String url) {
