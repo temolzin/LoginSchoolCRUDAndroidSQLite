@@ -2,15 +2,15 @@ package com.example.practicaloginsqlite;
 
 import androidx.annotation.NonNull;
 
-public class TipoUsuario {
+public class RolUser {
     private int idTipoUsuario;
     private String nombretipousuario;
 
-    public TipoUsuario(){
+    public RolUser(){
 
     }
 
-    public TipoUsuario(int idTipoUsuario, String nombretipousuario) {
+    public RolUser(int idTipoUsuario, String nombretipousuario) {
         this.idTipoUsuario = idTipoUsuario;
         this.nombretipousuario = nombretipousuario;
     }

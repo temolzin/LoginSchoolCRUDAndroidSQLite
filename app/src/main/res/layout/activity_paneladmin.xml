@@ -27,14 +27,14 @@
             tools:srcCompat="@drawable/logostart" />
 
         <TextView
-            android:id="@+id/textViewTipoUsuario"
+            android:id="@+id/textViewRolUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewNombreCompleto"
+            android:id="@+id/textViewFullNameUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"

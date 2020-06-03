@@ -19,23 +19,15 @@
             android:textSize="36sp" />
 
         <EditText
-            android:id="@+id/editTextUserName"
+            android:id="@+id/editTextIdUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre Usuario"
+            android:hint="ID de Usuario"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/editTextNombre"
+            android:id="@+id/editTextNameUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -43,25 +35,20 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextApPat"
+            android:id="@+id/editTextPhoneUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Apellido Paterno"
+            android:hint="Teléfono"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextApMat"
+            android:id="@+id/editTextEmailUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Apellido Materno"
+            android:hint="Email"
             android:inputType="textPersonName" />
-
-        <Spinner
-            android:id="@+id/spinnerTipoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="42dp" />
 
         <Button
             android:id="@+id/buttonRegister"
@@ -93,7 +80,15 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/buttonConsultAllUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EAC38DF"
+                android:text="Usuarios Registrados" />
+        </RadioGroup>
 
     </LinearLayout>
 </RelativeLayout>

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +20,7 @@ public class PanelAdmin extends AppCompatActivity {
         this.asociarCampos();
 
         Bundle parametros = this.getIntent().getExtras();
-        if(parametros !=null){
+        if(parametros != null){
             String nombrecompleto = parametros.getString("nombrecompleto");
             textViewNombreCompleto.setText(nombrecompleto);
             String nombretipousuario = parametros.getString("nombretipousuario");
@@ -37,8 +36,8 @@ public class PanelAdmin extends AppCompatActivity {
     }
 
     public void asociarCampos() {
-        this.textViewNombreCompleto = findViewById(R.id.textViewNombreCompleto);
-        this.textViewTipoUsuario = findViewById(R.id.textViewTipoUsuario);
+        this.textViewNombreCompleto = findViewById(R.id.textViewFullNameUser);
+        this.textViewTipoUsuario = findViewById(R.id.textViewRolUser);
         this.buttonSalir = findViewById(R.id.buttonSalir);
     }
 }

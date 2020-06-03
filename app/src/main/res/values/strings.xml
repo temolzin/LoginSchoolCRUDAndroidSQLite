@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PracticaLoginSQLite</string>
+    <string name="title_activity_alert_fields">AlertFieldsActivity</string>
+    <string name="title_activity_alert_user">AlertUserActivity</string>
 </resources>

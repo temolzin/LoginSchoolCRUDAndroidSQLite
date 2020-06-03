@@ -14,49 +14,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Rol de Usuario"
+            android:text="Registrar Acceso"
             android:textColor="#D64B4B"
             android:textSize="36sp" />
 
+        <Spinner
+            android:id="@+id/spinnerRolUsers"
+            android:layout_width="match_parent"
+            android:layout_height="42dp" />
+
+        <Spinner
+            android:id="@+id/spinnerUsers"
+            android:layout_width="match_parent"
+            android:layout_height="42dp" />
+
         <EditText
-            android:id="@+id/editTextIdRolUser"
+            android:id="@+id/editTextUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="ID del Rol"
+            android:hint="Nombre Usuario"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextNameRolUser"
+            android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre del Rol de Usuario"
-            android:inputType="textPersonName" />
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/buttonRegisterRolUser"
+            android:id="@+id/buttonRegisterAccess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#4CAF50"
             android:text="Registrar" />
 
         <Button
-            android:id="@+id/buttonConsultRolUser"
+            android:id="@+id/buttonConsultAccess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F3C332"
             android:text="Consultar" />
 
         <Button
-            android:id="@+id/buttonUpdateRolUser"
+            android:id="@+id/buttonUpdateAccess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#0AA0E4"
             android:text="Editar" />
 
         <Button
-            android:id="@+id/buttonDeleteRolUser"
+            android:id="@+id/buttonDeleteAccess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#E43333"

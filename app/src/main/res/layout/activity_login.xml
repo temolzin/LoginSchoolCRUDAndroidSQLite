@@ -58,23 +58,29 @@
             android:background="#D64B4B"
             android:text="Aceptar" />
 
-        <RadioButton
-            android:id="@+id/radioButtonLoginRegisterUser"
+        <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Registra Usuario" />
+            android:layout_height="match_parent" >
 
-        <RadioButton
-            android:id="@+id/radioButtonLoginRegisterRol"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Registra Rol de Usuario" />
+            <RadioButton
+                android:id="@+id/radioButtonLoginRegisterUser"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Registra Usuario" />
 
-        <RadioButton
-            android:id="@+id/radioButtonLoginAccess"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Registra Acceso" />
+            <RadioButton
+                android:id="@+id/radioButtonLoginRegisterRol"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Registra Rol de Usuario" />
+
+            <RadioButton
+                android:id="@+id/radioButtonLoginAccess"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Registra Acceso" />
+        </RadioGroup>
+
     </LinearLayout>
 
 </RelativeLayout>
