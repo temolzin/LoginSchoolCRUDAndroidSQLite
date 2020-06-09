@@ -18,6 +18,14 @@
             android:textColor="#D64B4B"
             android:textSize="36sp" />
 
+        <EditText
+            android:id="@+id/editTextAccessIdAccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Id Acceso"
+            android:inputType="textPersonName" />
+
         <Spinner
             android:id="@+id/spinnerRolUsers"
             android:layout_width="match_parent"
@@ -74,7 +82,15 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/buttonConsultAllAccess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EAC38DF"
+                android:text="Usuarios Registrados" />
+        </RadioGroup>
 
     </LinearLayout>
 </RelativeLayout>

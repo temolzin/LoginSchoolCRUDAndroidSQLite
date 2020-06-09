@@ -25,6 +25,7 @@
         <activity android:name=".User" />
         <activity android:name=".PanelAdmin" />
         <activity android:name=".Access" />
+        <activity android:name=".RolUser" />
     </application>
 
 </manifest>

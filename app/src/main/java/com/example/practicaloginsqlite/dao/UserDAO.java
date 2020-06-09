@@ -100,11 +100,31 @@ public class UserDAO implements Crud<UserDTO> {
 
     @Override
     public boolean update(UserDTO obj) {
-        return false;
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        String[] parameters = {obj.getIdUser()};
+        ContentValues values = new ContentValues();
+        values.put(FIELD_NAME_USER, obj.getName());
+        values.put(FIELD_PHONE_USER, obj.getPhone());
+        values.put(FIELD_EMAIL_USER, obj.getEmail());
+
+        boolean result = false;
+        int idResult = db.update(TABLE_USER, values, FIELD_ID_USER+"=?", parameters);
+        Toast.makeText(context, "Se actualizarón los datos del ID: " + obj.getIdUser(), Toast.LENGTH_SHORT).show();
+
+        return result;
     }
 
     @Override
-    public boolean delete(int id) {
-        return false;
+    public boolean delete(String id) {
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        String[] parameters = {id};
+
+        boolean result = false;
+        int idResult = db.delete(TABLE_USER, FIELD_ID_USER+"=?", parameters);
+        Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
+
+        return result;
     }
 }

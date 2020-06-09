@@ -1,5 +1,9 @@
 package com.example.practicaloginsqlite.dto;
 
+import androidx.annotation.NonNull;
+
+import java.util.Objects;
+
 public class UserDTO {
 
     private String idUser;
@@ -44,5 +48,27 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDTO userDTO = (UserDTO) o;
+        return Objects.equals(idUser, userDTO.idUser) &&
+                Objects.equals(name, userDTO.name) &&
+                Objects.equals(phone, userDTO.phone) &&
+                Objects.equals(email, userDTO.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idUser,name,phone,email);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "IdUser: " + this.getIdUser() + ", Nombre: " + getName();
     }
 }

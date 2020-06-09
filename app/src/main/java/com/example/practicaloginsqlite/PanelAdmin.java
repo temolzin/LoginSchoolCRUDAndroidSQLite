@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PanelAdmin extends AppCompatActivity {
-    public TextView textViewNombreCompleto;
-    public TextView textViewTipoUsuario;
+    public TextView textViewNameUser;
+    public TextView textViewRolUser;
     Button buttonSalir;
 
 
@@ -21,10 +21,10 @@ public class PanelAdmin extends AppCompatActivity {
 
         Bundle parametros = this.getIntent().getExtras();
         if(parametros != null){
-            String nombrecompleto = parametros.getString("nombrecompleto");
-            textViewNombreCompleto.setText(nombrecompleto);
-            String nombretipousuario = parametros.getString("nombretipousuario");
-            textViewTipoUsuario.setText(nombretipousuario);
+            String nameUser = parametros.getString("nameUser");
+            textViewNameUser.setText(nameUser);
+            String nameRolUser = parametros.getString("nameRol");
+            textViewRolUser.setText(nameRolUser);
         }
 
         buttonSalir.setOnClickListener(new View.OnClickListener() {
@@ -36,8 +36,8 @@ public class PanelAdmin extends AppCompatActivity {
     }
 
     public void asociarCampos() {
-        this.textViewNombreCompleto = findViewById(R.id.textViewFullNameUser);
-        this.textViewTipoUsuario = findViewById(R.id.textViewRolUser);
+        this.textViewNameUser = findViewById(R.id.textViewFullNameUser);
+        this.textViewRolUser = findViewById(R.id.textViewRolUser);
         this.buttonSalir = findViewById(R.id.buttonSalir);
     }
 }

@@ -64,7 +64,15 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/buttonConsultAllRolUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EAC38DF"
+                android:text="Usuarios Registrados" />
+        </RadioGroup>
 
     </LinearLayout>
 </RelativeLayout>

@@ -20,25 +20,26 @@
             android:textSize="36sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="306dp"
-            android:background="@drawable/logostart"
-            tools:srcCompat="@drawable/logostart" />
+            android:layout_height="95dp"
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:id="@+id/textViewRolUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/textViewFullNameUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/buttonSalir"

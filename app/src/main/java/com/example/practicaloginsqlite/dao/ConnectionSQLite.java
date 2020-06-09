@@ -15,11 +15,15 @@ public class ConnectionSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UserDAO.CREATE_TABLE_USER);
+        db.execSQL(RolUserDAO.CREATE_TABLE_ROL_USER);
+        db.execSQL(AccessDAO.CREATE_TABLE_ACCESS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS USER");
+        db.execSQL("DROP TABLE IF EXISTS ROLUSER");
+        db.execSQL("DROP TABLE IF EXISTS ACCESS");
         onCreate(db);
     }
 }

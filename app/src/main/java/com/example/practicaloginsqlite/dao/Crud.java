@@ -7,6 +7,6 @@ public interface Crud<T> {
     public ArrayList<T> read();
     public T readbyid(Object id);
     public boolean update(T obj);
-    public boolean delete(int id);
+    public boolean delete(String id);
     public boolean insert(T obj);
 }
