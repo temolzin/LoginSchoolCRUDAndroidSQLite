@@ -118,7 +118,7 @@ public class AccessDAO implements Crud<AccessDTO> {
 
         boolean result = false;
         db.delete(TABLE_ACCESS, FIELD_ID_ACCESS +"=?", parameters);
-//        db.delete(TABLE_ACCESS, null, null);
+
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;

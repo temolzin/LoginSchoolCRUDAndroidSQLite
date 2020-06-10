@@ -47,8 +47,16 @@ public class AdapterAccess extends BaseAdapter {
         TextView textViewAccessPassowrd = convertView.findViewById(R.id.textViewAccessPassword);
 
         textViewAccessIdUser.setText(accessDTOItem.getIdAccess());
-        textViewAccessRolUser.setText(accessDTOItem.getObjRolUser().toString());
-        textViewAccessUser.setText(accessDTOItem.getObjUser().toString());
+        //En caso de que no haya registros en el acceso para que no muestre error de objeto nulo, se muestra String vació
+        if(accessDTOItem.getObjUser() == null) {
+            textViewAccessUser.setText(accessDTOItem.getIdUser());
+        } else if(accessDTOItem.getObjRolUser() == null) {
+            textViewAccessRolUser.setText(accessDTOItem.getIdRolUser());
+        } else {
+            textViewAccessRolUser.setText(accessDTOItem.getObjRolUser().getNameRol());
+            textViewAccessUser.setText(accessDTOItem.getObjUser().getName());
+        }
+
         textViewAccessUsername.setText(accessDTOItem.getUserName());
         textViewAccessPassowrd.setText(accessDTOItem.getPassword());
 

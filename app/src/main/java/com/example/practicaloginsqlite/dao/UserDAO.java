@@ -123,6 +123,7 @@ public class UserDAO implements Crud<UserDTO> {
 
         boolean result = false;
         int idResult = db.delete(TABLE_USER, FIELD_ID_USER+"=?", parameters);
+//        int idResult = db.delete(TABLE_USER, null, null);
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;

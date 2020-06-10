@@ -139,7 +139,7 @@ public class Access extends AppCompatActivity {
                     Toast.makeText(Access.this, "Todos los campos deben de ser llenados para actualizar", Toast.LENGTH_SHORT).show();
                 } else {
                     accessDTO = new AccessDTO(editTextIdAccess.getText().toString(), (RolUserDTO) spinnerRolUser.getSelectedItem(),(UserDTO) spinnerUser.getSelectedItem(), editTextIdAccess.getText().toString(), editTextUserName.getText().toString());
-                    accessDAO.delete(accessDTO.getIdUser());
+                    accessDAO.delete(accessDTO.getIdAccess());
                     cleanFields();
                 }
             }

@@ -92,6 +92,8 @@ public class RolUserDAO implements Crud<RolUserDTO> {
 
         boolean result = false;
         int idResult = db.delete(TABLE_ROL_USER, FIELD_ID_ROL_USER+"=?", parameters);
+
+        db.delete(AccessDAO.TABLE_ACCESS, null, null);
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;
