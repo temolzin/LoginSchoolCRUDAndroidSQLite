@@ -19,10 +19,10 @@ Sólo necesitas tener android studio instalado
 
 ### Instalación 🔧
 
-For download you need have git installed, after you must execute this command for install the project 
+Para descargar el proyecto sólo tienes que ingresar este código de GitHub.
 
 ```
-git clone https://github.com/temolzin/hoolmanpage.git
+git clone https://github.com/temolzin/LoginCrudAndroidSQLite.git
 ```
 
 ## Autor ✒️
