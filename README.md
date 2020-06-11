@@ -4,7 +4,7 @@ Este proyecto registra, actualiza, elimina y consulta diferentes tablas de la ba
 
 ## Preview
 
-[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png =100x20)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png =100x20)
+[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png)
 
 [![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/acceso.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/acceso.png)
 
