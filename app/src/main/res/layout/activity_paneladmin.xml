@@ -41,6 +41,35 @@
             android:text="TextView"
             android:textSize="30sp" />
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alumnos" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Materias" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profesores" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCareer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carreras" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/buttonSalir"
             android:layout_width="match_parent"

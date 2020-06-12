@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.practicaloginsqlite">
+    package="com.example.practicaloginschoolsqlite">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -26,6 +26,8 @@
         <activity android:name=".PanelAdmin" />
         <activity android:name=".Access" />
         <activity android:name=".RolUser" />
+        <activity android:name=".Career" />
+        <activity android:name=".Subject" />
     </application>
 
 </manifest>

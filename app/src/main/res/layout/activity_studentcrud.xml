@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Registrar Alumno"
+            android:textColor="#D64B4B"
+            android:textSize="36sp" />
+
+        <EditText
+            android:id="@+id/editTextIdStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Matrícula del Alumno"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextNameStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre del Alumno"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextAgeStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Edad del Alumno"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextSemesterStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Semestre del Alumno"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextGenderStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Género"
+            android:inputType="textPersonName" />
+
+        <Spinner
+            android:id="@+id/spinnerStudentCareer"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <Button
+            android:id="@+id/buttonRegisterStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:text="Registrar" />
+
+        <Button
+            android:id="@+id/buttonConsultStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F3C332"
+            android:text="Consultar" />
+
+        <Button
+            android:id="@+id/buttonUpdateStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0AA0E4"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/buttonDeleteStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E43333"
+            android:text="Eliminar" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/buttonConsultAllStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EAC38DF"
+                android:text="Alumnos Registrados" />
+        </RadioGroup>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Registrar Materia"
+            android:textColor="#D64B4B"
+            android:textSize="36sp" />
+
+        <EditText
+            android:id="@+id/editTextIdSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ID de la materia"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextNameSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre de la materia"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextCreditSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Créditos de la materia"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/buttonRegisterSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:text="Registrar" />
+
+        <Button
+            android:id="@+id/buttonConsultSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F3C332"
+            android:text="Consultar" />
+
+        <Button
+            android:id="@+id/buttonUpdateSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0AA0E4"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/buttonDeleteSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E43333"
+            android:text="Eliminar" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/buttonConsultAllSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EAC38DF"
+                android:text="Materias Registradas" />
+        </RadioGroup>
+
+    </LinearLayout>
+</RelativeLayout>
