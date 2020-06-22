@@ -14,73 +14,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Registrar Profesor"
+            android:text="Asignar Estudiante a Materia"
             android:textColor="#D64B4B"
             android:textSize="36sp" />
 
         <EditText
-            android:id="@+id/editTextIdTeacher"
+            android:id="@+id/editTextIDStudentSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Matrícula del Profesor"
+            android:hint="ID Estudiante/Materia"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextNameTeacher"
+        <Spinner
+            android:id="@+id/spinnerStudentSS"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nombre del Profesor"
-            android:inputType="textPersonName" />
+            android:layout_height="35dp" />
 
-        <EditText
-            android:id="@+id/editTextAddressTeacher"
+        <Spinner
+            android:id="@+id/spinnerSubjectSS"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Dirección del Profesor"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/editTextPhoneTeacher"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Teléfono del profesor"
-            android:inputType="phone" />
-
-        <EditText
-            android:id="@+id/editTextScheduleTeacher"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Horario del Profesor"
-            android:inputType="textPersonName" />
+            android:layout_height="42dp" />
 
         <Button
-            android:id="@+id/buttonRegisterTeacher"
+            android:id="@+id/buttonRegisterStudentSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#4CAF50"
             android:text="Registrar" />
 
         <Button
-            android:id="@+id/buttonConsultTeacher"
+            android:id="@+id/buttonConsultStudentSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F3C332"
             android:text="Consultar" />
 
         <Button
-            android:id="@+id/buttonUpdateTeacher"
+            android:id="@+id/buttonUpdateStudentSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#0AA0E4"
             android:text="Editar" />
 
         <Button
-            android:id="@+id/buttonDeleteTeacher"
+            android:id="@+id/buttonDeleteStudentSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#E43333"
@@ -91,11 +69,11 @@
             android:layout_height="match_parent" >
 
             <Button
-                android:id="@+id/buttonConsultAllTeacher"
+                android:id="@+id/buttonConsultAllStudentSubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#5EAC38DF"
-                android:text="Profesores Registrados" />
+                android:text="Mostrar todos los registros" />
         </RadioGroup>
 
     </LinearLayout>

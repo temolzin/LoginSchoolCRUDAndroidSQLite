@@ -39,8 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Edad del Alumno"
-            android:inputType="textPersonName" />
+            android:hint="Edad del alumno"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editTextSemesterStudent"

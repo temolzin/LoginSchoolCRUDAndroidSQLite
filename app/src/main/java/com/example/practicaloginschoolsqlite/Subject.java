@@ -124,7 +124,7 @@ public class Subject extends AppCompatActivity {
                 View viewAlert = inflater.inflate(R.layout.activity_alert_subject, null);
                 builder.setView(viewAlert);
 
-                ListView listViewSubjects = viewAlert.findViewById(R.id.ListViewUsers);
+                ListView listViewSubjects = viewAlert.findViewById(R.id.ListViewSubject);
                 listViewSubjects.setAdapter(adapterSubject);
 
                 final AlertDialog dialog = builder.create();

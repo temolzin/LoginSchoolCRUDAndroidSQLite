@@ -6,24 +6,26 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
-import com.example.practicaloginschoolsqlite.dto.UserDTO;
+import com.example.practicaloginschoolsqlite.dto.TeacherDTO;
 
 import java.util.ArrayList;
 
-public class TeacherDAO implements Crud<UserDTO> {
+public class TeacherDAO implements Crud<TeacherDTO> {
 
-    public static final String TABLE_USER = "user";
-    public static final String FIELD_ID_USER = "idUser";
-    public static final String FIELD_NAME_USER = "name";
-    public static final String FIELD_PHONE_USER = "phone";
-    public static final String FIELD_EMAIL_USER = "email";
-    public static final String CREATE_TABLE_USER =
-            "CREATE TABLE " + TABLE_USER + "(" +
-                    FIELD_ID_USER + " TEXT," +
-                    FIELD_NAME_USER + " TEXT," +
-                    FIELD_PHONE_USER + " TEXT," +
-                    FIELD_EMAIL_USER + " TEXT," +
-            "PRIMARY KEY (" + FIELD_ID_USER + ")" +
+    public static final String TABLE_TEACHER = "teacher";
+    public static final String FIELD_ID_TEACHER = "idTeacher";
+    public static final String FIELD_NAME_TEACHER = "nameTeacher";
+    public static final String FIELD_ADDRESS_TEACHER = "addressTeacher";
+    public static final String FIELD_PHONE_TEACHER = "phoneTeacher";
+    public static final String FIELD_SCHEDULE_TEACHER = "scheduleTeacher";
+    public static final String CREATE_TABLE_TEACHER =
+            "CREATE TABLE " + TABLE_TEACHER + "(" +
+                    FIELD_ID_TEACHER + " TEXT," +
+                    FIELD_NAME_TEACHER + " TEXT," +
+                    FIELD_ADDRESS_TEACHER + " TEXT," +
+                    FIELD_PHONE_TEACHER + " TEXT," +
+                    FIELD_SCHEDULE_TEACHER + " TEXT," +
+            "PRIMARY KEY (" + FIELD_ID_TEACHER + ")" +
             ")";
 
     private ConnectionSQLite conn;
@@ -32,62 +34,64 @@ public class TeacherDAO implements Crud<UserDTO> {
 
     public TeacherDAO(Context context) {
         this.context = context;
-        conn = new ConnectionSQLite(context, TABLE_USER, null,1);
+        conn = new ConnectionSQLite(context, TABLE_TEACHER, null,1);
     }
 
     @Override
     public void create() {
-        conn = new ConnectionSQLite(context, "user", null, 1);
+        conn = new ConnectionSQLite(context, "teacher", null, 1);
     }
 
     @Override
-    public ArrayList<UserDTO> read() {
-        ArrayList<UserDTO> userDTOList = new ArrayList();
+    public ArrayList<TeacherDTO> read() {
+        ArrayList<TeacherDTO> teacherDTOList = new ArrayList();
         db = conn.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USER, null, null, null,null,null, null);
+        Cursor cursor = db.query(TABLE_TEACHER, null, null, null,null,null, null);
         while(cursor.moveToNext()) {
-            UserDTO userDTO;
-            userDTO = new UserDTO(cursor.getString(0), cursor.getString(1),cursor.getString(2),cursor.getString(3));
-            userDTOList.add(userDTO);
+            TeacherDTO teacherDTO;
+            teacherDTO = new TeacherDTO(cursor.getString(0), cursor.getString(1),cursor.getString(2),cursor.getString(3), cursor.getString(4));
+            teacherDTOList.add(teacherDTO);
         }
-        return userDTOList;
+        return teacherDTOList;
     }
 
     @Override
-    public UserDTO readbyid(Object id) {
+    public TeacherDTO readbyid(Object id) {
         db = conn.getReadableDatabase();
         String[] parameters = {(String) id};
-        String[] fields = {FIELD_ID_USER, FIELD_NAME_USER, FIELD_PHONE_USER, FIELD_EMAIL_USER};
-        UserDTO userDTO = null;
+        
+        String[] fields = {FIELD_ID_TEACHER, FIELD_NAME_TEACHER, FIELD_ADDRESS_TEACHER,FIELD_PHONE_TEACHER, FIELD_SCHEDULE_TEACHER};
+        TeacherDTO teacherDTO = null;
 
         try {
-            Cursor cursor = db.query(TABLE_USER, fields, FIELD_ID_USER+"=?", parameters,null,null,null);
+            Cursor cursor = db.query(TABLE_TEACHER, fields, FIELD_ID_TEACHER+"=?", parameters,null,null,null);
             cursor.moveToFirst();
 
-            userDTO = new UserDTO(cursor.getString(0), cursor.getString(1),cursor.getString(2),cursor.getString(3));
+            teacherDTO = new TeacherDTO(cursor.getString(0), cursor.getString(1),cursor.getString(2),cursor.getString(3), cursor.getString(4));
             cursor.close();
         } catch (Exception e) {
             Toast.makeText(context, "Ha ocurrido un error al consultar los datos: " + e.getMessage() , Toast.LENGTH_SHORT).show();
         }
-        return userDTO;
+        return teacherDTO;
     }
 
 
     @Override
-    public boolean insert(UserDTO obj) {
+    public boolean insert(TeacherDTO obj) {
         SQLiteDatabase db = conn.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(FIELD_ID_USER, obj.getIdUser());
-        values.put(FIELD_NAME_USER, obj.getName());
-        values.put(FIELD_PHONE_USER, obj.getPhone());
-        values.put(FIELD_EMAIL_USER, obj.getEmail());
+        values.put(FIELD_ID_TEACHER, obj.getIdTeacher());
+        values.put(FIELD_NAME_TEACHER, obj.getNameTeacher());
+        values.put(FIELD_ADDRESS_TEACHER, obj.getAddressTeacher());
+        values.put(FIELD_PHONE_TEACHER, obj.getPhoneTeacher());
+        values.put(FIELD_SCHEDULE_TEACHER, obj.getScheduleTeacher());
 
         boolean result = false;
-        Long idResult = db.insert(TABLE_USER, FIELD_ID_USER, values);
+        Long idResult = db.insert(TABLE_TEACHER, FIELD_ID_TEACHER, values);
         Toast.makeText(context, "ID: " + idResult.toString(), Toast.LENGTH_SHORT).show();
         if(idResult.equals(-1)) {
-            Toast.makeText(context, "Ha ocurrido un error al insertar el registro: El ID: " + obj.getIdUser() + " ya se encuentra registrado en la base de datos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Ha ocurrido un error al insertar el registro: El ID: " + obj.getIdTeacher() + " ya se encuentra registrado en la base de datos", Toast.LENGTH_SHORT).show();
             result = false;
         } else {
             Toast.makeText(context, "Registro insertado correctamente ID: " + idResult, Toast.LENGTH_SHORT).show();
@@ -99,18 +103,19 @@ public class TeacherDAO implements Crud<UserDTO> {
     }
 
     @Override
-    public boolean update(UserDTO obj) {
+    public boolean update(TeacherDTO obj) {
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        String[] parameters = {obj.getIdUser()};
+        String[] parameters = {obj.getIdTeacher()};
         ContentValues values = new ContentValues();
-        values.put(FIELD_NAME_USER, obj.getName());
-        values.put(FIELD_PHONE_USER, obj.getPhone());
-        values.put(FIELD_EMAIL_USER, obj.getEmail());
+        values.put(FIELD_NAME_TEACHER, obj.getNameTeacher());
+        values.put(FIELD_ADDRESS_TEACHER, obj.getAddressTeacher());
+        values.put(FIELD_PHONE_TEACHER, obj.getPhoneTeacher());
+        values.put(FIELD_SCHEDULE_TEACHER, obj.getScheduleTeacher());
 
         boolean result = false;
-        int idResult = db.update(TABLE_USER, values, FIELD_ID_USER+"=?", parameters);
-        Toast.makeText(context, "Se actualizarón los datos del ID: " + obj.getIdUser(), Toast.LENGTH_SHORT).show();
+        int idResult = db.update(TABLE_TEACHER, values, FIELD_ID_TEACHER+"=?", parameters);
+        Toast.makeText(context, "Se actualizarón los datos del ID: " + obj.getIdTeacher(), Toast.LENGTH_SHORT).show();
 
         return result;
     }
@@ -122,8 +127,8 @@ public class TeacherDAO implements Crud<UserDTO> {
         String[] parameters = {id};
 
         boolean result = false;
-        int idResult = db.delete(TABLE_USER, FIELD_ID_USER+"=?", parameters);
-//        int idResult = db.delete(TABLE_USER, null, null);
+        int idResult = db.delete(TABLE_TEACHER, FIELD_ID_TEACHER+"=?", parameters);
+//        int idResult = db.delete(TABLE_TEACHER, null, null);
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;

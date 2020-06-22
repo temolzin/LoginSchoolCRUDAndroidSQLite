@@ -46,6 +46,22 @@ public class PanelAdmin extends AppCompatActivity {
             }
         });
 
+        radioButtonTeacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Teacher.class);
+                startActivity(intent);
+            }
+        });
+
+        radioButtonStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Student.class);
+                startActivity(intent);
+            }
+        });
+
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -28,6 +28,8 @@
         <activity android:name=".RolUser" />
         <activity android:name=".Career" />
         <activity android:name=".Subject" />
+        <activity android:name=".Teacher" />
+        <activity android:name=".Student" />
     </application>
 
 </manifest>

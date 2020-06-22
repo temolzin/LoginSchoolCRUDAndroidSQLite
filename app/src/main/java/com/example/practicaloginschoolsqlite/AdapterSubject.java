@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.practicaloginschoolsqlite.dto.CareerDTO;
+import com.example.practicaloginschoolsqlite.dto.SubjectDTO;
 import com.example.practicaloginschoolsqlite.dto.SubjectDTO;
 
 import java.util.ArrayList;
@@ -39,15 +39,15 @@ public class AdapterSubject extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        CareerDTO careerDTOItem = (CareerDTO) getItem(position);
-        convertView = LayoutInflater.from(context).inflate(R.layout.item_career, null);
-        TextView textViewldCareer = convertView.findViewById(R.id.textViewAlertIdCareer);
-        TextView textViewNameCareer = convertView.findViewById(R.id.textViewAlertNameCareer);
-        TextView textViewDurationCareer = convertView.findViewById(R.id.textViewAlertCareerDuration);
+        SubjectDTO subjectDTOItem = (SubjectDTO) getItem(position);
+        convertView = LayoutInflater.from(context).inflate(R.layout.item_subject, null);
+        TextView textViewldSubject = convertView.findViewById(R.id.textViewAlertIdSubject);
+        TextView textViewNameSubject = convertView.findViewById(R.id.textViewAlertNameSubject);
+        TextView textViewSubjectCredit = convertView.findViewById(R.id.textViewAlertSubjectCredit);
 
-        textViewldCareer.setText(careerDTOItem.getIdCareer());
-        textViewNameCareer.setText(careerDTOItem.getNameCareer());
-        textViewDurationCareer.setText(careerDTOItem.getDurationCareer());
+        textViewldSubject.setText(subjectDTOItem.getIdSubject());
+        textViewNameSubject.setText(subjectDTOItem.getNameSubject());
+        textViewSubjectCredit.setText(subjectDTOItem.getCreditSubject() + "");
 
 
         return convertView;
