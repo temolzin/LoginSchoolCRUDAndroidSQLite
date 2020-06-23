@@ -30,6 +30,8 @@
         <activity android:name=".Subject" />
         <activity android:name=".Teacher" />
         <activity android:name=".Student" />
+        <activity android:name=".StudentSubject" />
+        <activity android:name=".TeacherSubject" />
     </application>
 
 </manifest>

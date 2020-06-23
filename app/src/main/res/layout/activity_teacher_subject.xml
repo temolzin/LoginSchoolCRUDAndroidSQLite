@@ -19,7 +19,7 @@
             android:textSize="36sp" />
 
         <EditText
-            android:id="@+id/editTextTeacherSubject"
+            android:id="@+id/editTextIdTeacherSubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -27,12 +27,12 @@
             android:inputType="textPersonName" />
 
         <Spinner
-            android:id="@+id/spinnerTeacherPS"
+            android:id="@+id/spinnerTeacherTS"
             android:layout_width="match_parent"
             android:layout_height="35dp" />
 
         <Spinner
-            android:id="@+id/spinnerSubjectPS"
+            android:id="@+id/spinnerSubjectTS"
             android:layout_width="match_parent"
             android:layout_height="42dp" />
 
@@ -64,17 +64,12 @@
             android:background="#E43333"
             android:text="Eliminar" />
 
-        <RadioGroup
+        <Button
+            android:id="@+id/buttonConsultAllTeacherSubject"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <Button
-                android:id="@+id/buttonConsultTeacherSubject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#5EAC38DF"
-                android:text="Mostrar todos los registros" />
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:background="#5EAC38DF"
+            android:text="Mostrar todos los registros" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -22,6 +22,8 @@ public class ConnectionSQLite extends SQLiteOpenHelper {
         db.execSQL(CareerDAO.CREATE_TABLE_CARRER);
         db.execSQL(TeacherDAO.CREATE_TABLE_TEACHER);
         db.execSQL(StudentDAO.CREATE_TABLE_STUDENT);
+        db.execSQL(TeacherSubjectDAO.CREATE_TABLE_TEACHER_SUBJECT);
+        db.execSQL(StudentSubjectDAO.CREATE_TABLE_STUDENT_SUBJECT);
     }
 
     @Override
@@ -33,5 +35,7 @@ public class ConnectionSQLite extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS CAREER");
         db.execSQL("DROP TABLE IF EXISTS STUDENT");
         db.execSQL("DROP TABLE IF EXISTS TEACHER");
+        db.execSQL("DROP TABLE IF EXISTS TEACHERSUBJECT");
+        db.execSQL("DROP TABLE IF EXISTS STUDENTSUBJECT");
     }
 }

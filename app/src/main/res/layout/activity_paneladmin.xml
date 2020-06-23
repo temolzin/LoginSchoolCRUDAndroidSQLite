@@ -68,6 +68,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Carreras" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTeacherSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asignar Profesor a Materia" />
+
+            <RadioButton
+                android:id="@+id/radioButtonStudentSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asignar Estudiante a Materias" />
+
+            <RadioButton
+                android:id="@+id/radioButtonQueries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Realizar Consultas" />
+
         </RadioGroup>
 
         <Button
