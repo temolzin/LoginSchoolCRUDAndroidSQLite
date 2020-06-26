@@ -62,7 +62,7 @@ public class StudentDTO {
         this.genreStudent = genreStudent;
     }
 
-    public CareerDTO getIdCareer() {
+    public CareerDTO getCareer() {
         return idCareer;
     }
 

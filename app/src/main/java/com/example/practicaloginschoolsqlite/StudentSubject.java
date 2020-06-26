@@ -167,7 +167,14 @@ public class StudentSubject extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         studentSubjectDTO = (StudentSubjectDTO) parent.getItemAtPosition(position);
                         editTextIdStudentSubject.setText(studentSubjectDTO.getIdStudentSubject());
-                        spinnerStudent.setSelection(arrayListStudents.indexOf(studentSubjectDTO.getStudent()));
+
+                        //Se recorre la lista para seleccionar en el spinner el objeto que selecciono el usuario para eliminarlo o editarlo
+                        for(StudentDTO studentDTO : arrayListStudents) {
+                            if(studentDTO.getIdStudent().equals(studentSubjectDTO.getStudent().getIdStudent())) {
+                                spinnerStudent.setSelection(arrayListStudents.indexOf(studentDTO));
+                            }
+                        }
+
                         spinnerSubject.setSelection(arrayListSubjects.indexOf(studentSubjectDTO.getSubject()));
 
                         //Se activan los botones al consultar algún cliente

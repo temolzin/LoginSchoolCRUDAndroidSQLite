@@ -46,10 +46,10 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButtonStudent"
+                android:id="@+id/radioButtonCareer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Alumnos" />
+                android:text="Carreras" />
 
             <RadioButton
                 android:id="@+id/radioButtonSubject"
@@ -58,16 +58,16 @@
                 android:text="Materias" />
 
             <RadioButton
+                android:id="@+id/radioButtonStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alumnos" />
+
+            <RadioButton
                 android:id="@+id/radioButtonTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Profesores" />
-
-            <RadioButton
-                android:id="@+id/radioButtonCareer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Carreras" />
 
             <RadioButton
                 android:id="@+id/radioButtonTeacherSubject"

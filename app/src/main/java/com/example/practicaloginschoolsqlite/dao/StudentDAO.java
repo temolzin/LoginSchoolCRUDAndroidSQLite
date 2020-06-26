@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import com.example.practicaloginschoolsqlite.dto.CareerDTO;
 import com.example.practicaloginschoolsqlite.dto.StudentDTO;
+import com.example.practicaloginschoolsqlite.dto.StudentSubjectDTO;
+import com.example.practicaloginschoolsqlite.dto.SubjectDTO;
 
 import java.util.ArrayList;
 
@@ -93,7 +95,7 @@ public class StudentDAO implements Crud<StudentDTO> {
         values.put(FIELD_AGE_STUDENT, obj.getAgeStudent());
         values.put(FIELD_GENRE_STUDENT, obj.getGenreStudent());
         values.put(FIELD_SEMESTER_STUDENT, obj.getSemesterStudent());
-        values.put(FIELD_ID_CAREER_STUDENT, obj.getIdCareer().getIdCareer());
+        values.put(FIELD_ID_CAREER_STUDENT, obj.getCareer().getIdCareer());
 
         boolean result = false;
         Long idResult = db.insert(TABLE_STUDENT, FIELD_ID_STUDENT, values);
@@ -120,7 +122,7 @@ public class StudentDAO implements Crud<StudentDTO> {
         values.put(FIELD_AGE_STUDENT, obj.getAgeStudent());
         values.put(FIELD_GENRE_STUDENT, obj.getGenreStudent());
         values.put(FIELD_SEMESTER_STUDENT, obj.getSemesterStudent());
-        values.put(FIELD_ID_CAREER_STUDENT, obj.getIdCareer().getIdCareer());
+        values.put(FIELD_ID_CAREER_STUDENT, obj.getCareer().getIdCareer());
 
         boolean result = false;
         int idResult = db.update(TABLE_STUDENT, values, FIELD_ID_STUDENT+"=?", parameters);
@@ -140,5 +142,25 @@ public class StudentDAO implements Crud<StudentDTO> {
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;
+    }
+
+    /*
+        Método para que regresa una lista con todos los estudiantes registrados con el id de la materia (subjectDTO)
+     */
+    public ArrayList<StudentDTO> readbyidsubject(SubjectDTO subjectDTO) {
+        ArrayList<StudentDTO> studentDTOS = new ArrayList<StudentDTO>();
+
+        //Se crea el objeto StudentSubjectDAO para mandar a llamar un metodo
+        StudentSubjectDAO studentSubjectDAO = new StudentSubjectDAO(context);
+        //Se manda a llamar el metodo readbyidsubject que regresa una lista con los objetos registrados en la base de datos filtrados por el id de materia (idSubject)
+        ArrayList<StudentSubjectDTO> studentSubjectDTOS = studentSubjectDAO.readbyidsubject(subjectDTO);
+
+        //Se recorre la lista regresada por el metodo y se va llenando la lista de estudiantes
+        for(StudentSubjectDTO studentSubjectDTO : studentSubjectDTOS) {
+            //Se manda a llamar el metodo readbyid (STUDENTDAO) para saber los datos del profesor con la lista que regresa studentSubjectDAO.readbyidsubject y se agregan los objectos a la lista de estudiantes
+            studentDTOS.add(readbyid(studentSubjectDTO.getStudent().getIdStudent()));
+        }
+
+        return studentDTOS;
     }
 }

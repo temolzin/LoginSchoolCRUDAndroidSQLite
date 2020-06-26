@@ -24,7 +24,7 @@ public class TeacherSubjectDTO {
 
 
     public TeacherDTO getTeacher() {
-        return teacher;
+        return this.teacher;
     }
 
     public void setTeacher(TeacherDTO teacher) {
@@ -32,7 +32,7 @@ public class TeacherSubjectDTO {
     }
 
     public SubjectDTO getSubject() {
-        return subject;
+        return this.subject;
     }
 
     public void setSubject(SubjectDTO subject) {
@@ -43,10 +43,10 @@ public class TeacherSubjectDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TeacherSubjectDTO rolUserDTO = (TeacherSubjectDTO) o;
-        return Objects.equals(idTeacherSubject, rolUserDTO.idTeacherSubject) &&
-                Objects.equals(teacher, rolUserDTO.teacher) &&
-                Objects.equals(subject, rolUserDTO.subject);
+        TeacherSubjectDTO teacherSubjectDTO = (TeacherSubjectDTO) o;
+        return Objects.equals(idTeacherSubject, teacherSubjectDTO.idTeacherSubject) &&
+                Objects.equals(teacher, teacherSubjectDTO.teacher) &&
+                Objects.equals(subject, teacherSubjectDTO.subject);
     }
 
     @Override

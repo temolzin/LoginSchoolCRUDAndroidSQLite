@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="ID de la materia"
+            android:hint="Nombre de la carrera"
             android:inputType="textPersonName" />
 
         <EditText

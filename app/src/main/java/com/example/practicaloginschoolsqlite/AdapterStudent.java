@@ -52,7 +52,7 @@ public class AdapterStudent extends BaseAdapter {
         textViewAddressStudent.setText(studentDTOItem.getAgeStudent() + "");
         textViewSemesterStudent.setText(studentDTOItem.getSemesterStudent());
         textViewGenderStudent.setText(studentDTOItem.getGenreStudent());
-        textViewAlerIdCareerStudent.setText(studentDTOItem.getIdCareer().toString());
+        textViewAlerIdCareerStudent.setText(studentDTOItem.getCareer().toString());
 
         return convertView;
     }

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PanelAdmin extends AppCompatActivity {
     public TextView textViewNameUser;
     public TextView textViewRolUser;
-    public RadioButton radioButtonStudent, radioButtonTeacher, radioButtonCareer, radioButtonSubject, radioButtonTeacherSubject, radioButtonStudentSubject;
+    public RadioButton radioButtonStudent, radioButtonTeacher, radioButtonCareer, radioButtonSubject, radioButtonTeacherSubject, radioButtonStudentSubject, radioButtonQueries;
     Button buttonSalir;
 
 
@@ -78,6 +78,14 @@ public class PanelAdmin extends AppCompatActivity {
             }
         });
 
+        radioButtonQueries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Queries.class);
+                startActivity(intent);
+            }
+        });
+
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,5 +104,6 @@ public class PanelAdmin extends AppCompatActivity {
         this.radioButtonSubject = findViewById(R.id.radioButtonSubject);
         this.radioButtonTeacherSubject = findViewById(R.id.radioButtonTeacherSubject);
         this.radioButtonStudentSubject = findViewById(R.id.radioButtonStudentSubject);
+        this.radioButtonQueries = findViewById(R.id.radioButtonQueries);
     }
 }

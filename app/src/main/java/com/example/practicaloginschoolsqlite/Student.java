@@ -96,7 +96,7 @@ public class Student extends AppCompatActivity {
                         editTextAgeStudent.setText(studentDTO.getAgeStudent());
                         editTextSemesterStudent.setText(studentDTO.getSemesterStudent());
                         editTextGenreStudent.setText(studentDTO.getGenreStudent());
-                        editTextGenreStudent.setText(studentDTO.getIdCareer().toString());
+                        editTextGenreStudent.setText(studentDTO.getCareer().toString());
 
                         //Se activan los botones al consultar algún cliente
                         buttonUpdateStudent.setEnabled(true);
@@ -166,7 +166,7 @@ public class Student extends AppCompatActivity {
                         editTextSemesterStudent.setText(studentDTO.getSemesterStudent());
                         editTextGenreStudent.setText(studentDTO.getGenreStudent());
 
-                        spinnerIdCareerStudent.setSelection(arrayListCareer.indexOf(studentDTO.getIdCareer()));
+                        spinnerIdCareerStudent.setSelection(arrayListCareer.indexOf(studentDTO.getCareer()));
 
                         //Se activan los botones al consultar algún cliente
                         buttonUpdateStudent.setEnabled(true);

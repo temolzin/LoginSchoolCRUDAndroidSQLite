@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+import com.example.practicaloginschoolsqlite.TeacherSubject;
 import com.example.practicaloginschoolsqlite.dto.SubjectDTO;
 import com.example.practicaloginschoolsqlite.dto.TeacherDTO;
 import com.example.practicaloginschoolsqlite.dto.TeacherSubjectDTO;
@@ -14,18 +15,18 @@ import java.util.ArrayList;
 
 public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
 
-    public static final String TABLE_TEACHER_SUBJECT = "teacherTeacherSubject";
-    public static final String FIELD_ID_TEACHER_SUBJECT = "idTeacherTeacherSubject";
-    public static final String FIELD_ID_TEACHER = "idTeacher";
-    public static final String FIELD_ID_SUBJECT = "idTeacherSubject";
+    public static final String TABLE_TEACHER_SUBJECT = "teacherSubject";
+    public static final String FIELD_ID_TEACHER_SUBJECT = "idTeacherSubject";
+    public static final String FIELD_ID_TEACHER = "idTeacherTS";
+    public static final String FIELD_ID_SUBJECT = "idSubjectTS";
     public static final String CREATE_TABLE_TEACHER_SUBJECT =
             "CREATE TABLE " + TABLE_TEACHER_SUBJECT + " (" +
                     FIELD_ID_TEACHER_SUBJECT + " TEXT," +
                     FIELD_ID_TEACHER + " TEXT," +
                     FIELD_ID_SUBJECT + " TEXT," +
             "PRIMARY KEY (" + FIELD_ID_TEACHER_SUBJECT + "), " +
-            "FOREIGN KEY (" + FIELD_ID_TEACHER + ") REFERENCES teacher(idTeacher), " +
-            "FOREIGN KEY (" + FIELD_ID_SUBJECT + ") REFERENCES subject(idTeacherSubject) " +
+            "FOREIGN KEY (" + FIELD_ID_TEACHER + ") REFERENCES " + TeacherDAO.TABLE_TEACHER + "(" + TeacherDAO.FIELD_ID_TEACHER + "), " +
+            "FOREIGN KEY (" + FIELD_ID_SUBJECT + ") REFERENCES " + SubjectDAO.TABLE_SUBJECT + "(" + SubjectDAO.FIELD_ID_SUBJECT + ") " +
             ")";
 
     private ConnectionSQLite conn;
@@ -48,7 +49,7 @@ public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
 
     @Override
     public ArrayList<TeacherSubjectDTO> read() {
-        ArrayList<TeacherSubjectDTO> teacherSubjectDTOList = new ArrayList();
+        ArrayList<TeacherSubjectDTO> teacherSubjectDTOList = new ArrayList<TeacherSubjectDTO>();
         db = conn.getReadableDatabase();
         Cursor cursor = db.query(TABLE_TEACHER_SUBJECT, null, null, null,null,null, null);
 
@@ -59,7 +60,7 @@ public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
             subjectDAO = new SubjectDAO(context);
             SubjectDTO subjectDTO = subjectDAO.readbyid(cursor.getString(2));
 
-            TeacherSubjectDTO  teacherSubjectDTO;
+            TeacherSubjectDTO teacherSubjectDTO;
             teacherSubjectDTO = new TeacherSubjectDTO(cursor.getString(0), teacherDTO,subjectDTO);
             teacherSubjectDTOList.add(teacherSubjectDTO);
         }
@@ -74,7 +75,7 @@ public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
         TeacherSubjectDTO  teacherSubjectDTO = null;
 
         try {
-            Cursor cursor = db.query(TABLE_TEACHER_SUBJECT, fields, FIELD_ID_TEACHER + "=?", parameters, null, null, null);
+            Cursor cursor = db.query(TABLE_TEACHER_SUBJECT, fields, FIELD_ID_TEACHER_SUBJECT + "=?", parameters, null, null, null);
             cursor.moveToFirst();
 
             teacherDAO = new TeacherDAO(context);
@@ -92,6 +93,37 @@ public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
         return teacherSubjectDTO;
     }
 
+    /*
+        Metodo para leer todos los datos de la TABLA, filtrados por el id de la materia (idSubject)
+     */
+    public ArrayList<TeacherSubjectDTO> readbyidsubject(SubjectDTO subjectDTO) {
+        ArrayList<TeacherSubjectDTO> arrayListTeacherSubjectDTO = new ArrayList<TeacherSubjectDTO>();
+        db = conn.getReadableDatabase();
+        String[] parameters = {subjectDTO.getIdSubject()};
+        String[] fields = {FIELD_ID_TEACHER_SUBJECT, FIELD_ID_TEACHER, FIELD_ID_SUBJECT};
+
+        try {
+            Cursor cursor = db.query(TABLE_TEACHER_SUBJECT, fields, FIELD_ID_SUBJECT + "=?", parameters, null, null, null);
+
+            while(cursor.moveToNext()) {
+                teacherDAO = new TeacherDAO(context);
+                TeacherDTO teacherDTO = teacherDAO.readbyid(cursor.getString(1));
+
+                subjectDAO = new SubjectDAO(context);
+                SubjectDTO subjectDTO1 = subjectDAO.readbyid(cursor.getString(2));
+
+                TeacherSubjectDTO teacherSubjectDTO = new TeacherSubjectDTO(cursor.getString(0), teacherDTO, subjectDTO1);
+                arrayListTeacherSubjectDTO.add(teacherSubjectDTO);
+            }
+
+
+            cursor.close();
+        } catch (Exception e) {
+            Toast.makeText(context, "Ha ocurrido un error al consultar los datos: " + e.getMessage() , Toast.LENGTH_SHORT).show();
+        }
+        return arrayListTeacherSubjectDTO;
+    }
+
 
     @Override
     public boolean insert(TeacherSubjectDTO obj) {
@@ -103,7 +135,7 @@ public class TeacherSubjectDAO implements Crud<TeacherSubjectDTO> {
         values.put(FIELD_ID_SUBJECT, obj.getSubject().getIdSubject());
 
         boolean result = false;
-        Long idResult = db.insert(TABLE_TEACHER_SUBJECT, FIELD_ID_TEACHER, values);
+        Long idResult = db.insert(TABLE_TEACHER_SUBJECT, FIELD_ID_TEACHER_SUBJECT, values);
         Toast.makeText(context, "ID: " + idResult.toString(), Toast.LENGTH_SHORT).show();
         if(idResult.equals(-1)) {
             Toast.makeText(context, "Ha ocurrido un error al insertar el registro: El ID: " + obj.getIdTeacherSubject() + " ya se encuentra registrado en la base de datos", Toast.LENGTH_SHORT).show();

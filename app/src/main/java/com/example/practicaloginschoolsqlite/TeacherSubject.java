@@ -1,6 +1,7 @@
 package com.example.practicaloginschoolsqlite;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,8 +62,8 @@ public class TeacherSubject extends AppCompatActivity {
         subjectDAO = new SubjectDAO(this);
 
         //Se llenan los spinners
-        this.fillSpinnerTeachers();
         this.fillSpinnerSubjects();
+        this.fillSpinnerTeachers();
 
         teacherSubjectDAO = new TeacherSubjectDAO(this);
 
@@ -104,7 +105,7 @@ public class TeacherSubject extends AppCompatActivity {
                     } else {
 
                         spinnerTeacher.setSelection(arrayListTeachers.indexOf(teacherSubjectDTO.getTeacher()));
-                        spinnerSubject.setSelection(arrayListSubjects.indexOf(teacherSubjectDTO.getTeacher()));
+                        spinnerSubject.setSelection(arrayListSubjects.indexOf(teacherSubjectDTO.getSubject()));
 
                         //Se activan los botones al consultar algún cliente
                         buttonUpdateTeacherSubject.setEnabled(true);
@@ -167,7 +168,14 @@ public class TeacherSubject extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         teacherSubjectDTO = (TeacherSubjectDTO) parent.getItemAtPosition(position);
                         editTextIdTeacherSubject.setText(teacherSubjectDTO.getIdTeacherSubject());
-                        spinnerTeacher.setSelection(arrayListTeachers.indexOf(teacherSubjectDTO.getTeacher()));
+
+                        //Se recorre la lista para seleccionar en el spinner el objeto que selecciono el usuario para eliminarlo o editarlo
+                        for(TeacherDTO teacherDTO : arrayListTeachers) {
+                            if(teacherDTO.getIdTeacher().equals(teacherSubjectDTO.getTeacher().getIdTeacher())) {
+                                spinnerTeacher.setSelection(arrayListTeachers.indexOf(teacherDTO));
+                            }
+                        }
+
                         spinnerSubject.setSelection(arrayListSubjects.indexOf(teacherSubjectDTO.getSubject()));
 
                         //Se activan los botones al consultar algún cliente

@@ -4,9 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.example.practicaloginschoolsqlite.dto.SubjectDTO;
 import com.example.practicaloginschoolsqlite.dto.TeacherDTO;
+import com.example.practicaloginschoolsqlite.dto.TeacherSubjectDTO;
 
 import java.util.ArrayList;
 
@@ -75,7 +78,6 @@ public class TeacherDAO implements Crud<TeacherDTO> {
         return teacherDTO;
     }
 
-
     @Override
     public boolean insert(TeacherDTO obj) {
         SQLiteDatabase db = conn.getWritableDatabase();
@@ -128,9 +130,28 @@ public class TeacherDAO implements Crud<TeacherDTO> {
 
         boolean result = false;
         int idResult = db.delete(TABLE_TEACHER, FIELD_ID_TEACHER+"=?", parameters);
-//        int idResult = db.delete(TABLE_TEACHER, null, null);
         Toast.makeText(context, "Se eliminó el registro con ID: " + id, Toast.LENGTH_SHORT).show();
 
         return result;
+    }
+
+    /*
+        Método para que regresa una lista con todos los profesores registrados con el id de la materia (subjectDTO)
+     */
+    public ArrayList<TeacherDTO> readbyidsubject(SubjectDTO subjectDTO) {
+        ArrayList<TeacherDTO> teacherDTOS = new ArrayList<TeacherDTO>();
+
+        //Se crea el objeto TeacherSubjectDAO para mandar a llamar un metodo
+        TeacherSubjectDAO teacherSubjectDAO = new TeacherSubjectDAO(context);
+        //Se manda a llamar el metodo readbyidsubject que regresa una lista con los objetos registrados en la base de datos filtrados por el id de materia (idSubject)
+        ArrayList<TeacherSubjectDTO> teacherSubjectDTOS = teacherSubjectDAO.readbyidsubject(subjectDTO);
+
+        //Se recorre la lista regresada por el metodo y se va llenando la lista de profesores
+        for(TeacherSubjectDTO teacherSubjectDTO : teacherSubjectDTOS) {
+            //Se manda a llamar el metodo readbyid (TEACHERDAO) para saber los datos del profesor con la lista que regresa teacherSubjectDAO.readbyidsubject y se agregan los objectos a la lista de profesores
+            teacherDTOS.add(readbyid(teacherSubjectDTO.getTeacher().getIdTeacher()));
+        }
+
+        return teacherDTOS;
     }
 }

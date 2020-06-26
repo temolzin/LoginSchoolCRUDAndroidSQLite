@@ -46,7 +46,7 @@ public class Career extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Se valida que los campos no esten vacíos
-                if(editTextIdCareer.getText().toString().isEmpty() || editTextNameCareer.getText().toString().isEmpty()) {
+                if(editTextIdCareer.getText().toString().isEmpty() || editTextNameCareer.getText().toString().isEmpty()|| editTextDurationCareer.getText().toString().isEmpty()) {
                     Toast.makeText(Career.this, "Todos los campos deben de ser llenados", Toast.LENGTH_SHORT).show();
                 } else {
                     careerDTO = new CareerDTO(editTextIdCareer.getText().toString(), editTextNameCareer.getText().toString(), editTextDurationCareer.getText().toString());
@@ -87,7 +87,7 @@ public class Career extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Se valida que los campos no esten vacíos
-                if(editTextIdCareer.getText().toString().isEmpty() && editTextNameCareer.toString().isEmpty()) {
+                if(editTextIdCareer.getText().toString().isEmpty() || editTextNameCareer.getText().toString().isEmpty()|| editTextDurationCareer.getText().toString().isEmpty()) {
                     Toast.makeText(Career.this, "Todos los campos deben de ser llenados para actualizar", Toast.LENGTH_SHORT).show();
                 } else {
                     careerDTO = new CareerDTO(editTextIdCareer.getText().toString(), editTextNameCareer.getText().toString(), editTextDurationCareer.getText().toString());
