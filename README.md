@@ -1,16 +1,21 @@
-# Proyecto CRUDS con Login en Android
+# Proyecto CRUD base de datos de escuela con Login
 
 Este proyecto registra, actualiza, elimina y consulta diferentes tablas de la base de datos en SQLite. 
+Al igual contiene un modulo que hace consultas dependiendo los parámetros recibidos.
 
 ## Preview
 
-[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/inicio.png)
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/inicioGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/inicioGit.jpg)
 
-[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/acceso.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/acceso.png)
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/inicioLoginGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/inicioLoginGit.jpg)
 
-[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/consulta2.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/consulta2.png)
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/alumnoGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/alumnoGit.jpg)
 
-[![Preview](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/consultarol.png)](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/app/src/main/res/drawable/consultarol.png)
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/carreraGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/carreraGit.jpg)
+
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/consultarCarrerasGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/consultarCarrerasGit.jpg)
+
+[![Preview](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/consultaGit.jpg)](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/app/src/main/res/drawable/consultaGit.jpg)
 
 
 ### Requerimientos 📋
@@ -22,7 +27,7 @@ Sólo necesitas tener android studio instalado
 Para descargar el proyecto sólo tienes que ingresar este código de GitHub.
 
 ```
-git clone https://github.com/temolzin/LoginCrudAndroidSQLite.git
+git clone https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite.git
 ```
 
 ## Autor ✒️
@@ -33,5 +38,5 @@ git clone https://github.com/temolzin/LoginCrudAndroidSQLite.git
 
 ## Licencia 📄
 
-Este proyecto contiene una licencia MIT, puedes ver el archivo en [LICENSE.md](https://github.com/temolzin/LoginCrudAndroidSQLite/blob/master/LICENSE)
+Este proyecto contiene una licencia MIT, puedes ver el archivo en [LICENSE.md](https://github.com/temolzin/LoginSchoolCRUDAndroidSQLite/blob/master/LICENSE)
 
